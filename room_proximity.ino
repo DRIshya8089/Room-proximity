@@ -1,14 +1,14 @@
-#define BLYNK_TEMPLATE_ID "TMPL3iaN4ev7x"
-#define BLYNK_TEMPLATE_NAME "Stair Proximity"
-#define BLYNK_AUTH_TOKEN "n67IBU9uxuds9YsBQLhogCVgHA3xwxFh"
+#define BLYNK_TEMPLATE_ID ""
+#define BLYNK_TEMPLATE_NAME ""
+#define BLYNK_AUTH_TOKEN ""
 
 #define BLYNK_PRINT Serial
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <BlynkSimpleEsp32.h>
 
-char ssid[] = "SIVAN"; 
-char pass[] = "anilkrishnan0638";
+char ssid[] = "your wifi ssid"; 
+char pass[] = "your pw";
 
 #define PIR_SENSOR 13
 #define BUZZER_PIN 25
@@ -32,7 +32,7 @@ void checkMotion() {
       if (WiFi.status() != WL_CONNECTED) {
         digitalWrite(BUZZER_PIN, HIGH);  // Local alarm
       } else {
-        Blynk.logEvent("stair_proximity", "Somebody near the stairs"); // Cloud alert
+        Blynk.logEvent("your event name in blynk", "Somebody near the stairs"); // Cloud alert
       }
 
       motionSent = true; // Prevent repeated alerts
